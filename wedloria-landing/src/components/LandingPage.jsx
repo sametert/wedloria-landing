@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../index.css";
 import logo from "../assets/logo.png";
+import { sendContactEmail } from "../utils/emailService";
 
 const features = [
   {
@@ -40,19 +41,60 @@ export default function LandingPage() {
   const [form, setForm] = useState({ name: "", surname: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    // Hata mesajını temizle
+    if (error) setError(null);
+    if (success) setSuccess(null);
   };
 
-  const handleSubmit = (e) => {
+  const validateForm = () => {
+    const { name, surname, email, message } = form;
+    
+    if (!name.trim()) return "İsim alanı gereklidir.";
+    if (!surname.trim()) return "Soyisim alanı gereklidir.";
+    if (!email.trim()) return "Email alanı gereklidir.";
+    if (!message.trim()) return "Mesaj alanı gereklidir.";
+    
+    // Email formatı kontrolü
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) return "Geçerli bir email adresi giriniz.";
+    
+    return null;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
-      setSuccess(true);
-      setForm({ name: "", surname: "", email: "", message: "" });
+    setError(null);
+    setSuccess(null);
+
+    // Form validasyonu
+    const validationError = validateForm();
+    if (validationError) {
+      setError(validationError);
       setSending(false);
-    }, 800);
+      return;
+    }
+
+    try {
+      // EmailJS ile email gönder
+      const result = await sendContactEmail(form);
+      
+      if (result.success) {
+        setSuccess("Mesajınız başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğiz.");
+        setForm({ name: "", surname: "", email: "", message: "" });
+      } else {
+        setError(result.error || "Email gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+      }
+    } catch (err) {
+      setError("Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin.");
+      console.error("Form gönderim hatası:", err);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -124,7 +166,8 @@ export default function LandingPage() {
             <textarea id="message" name="message" rows="4" value={form.message} onChange={handleChange} required></textarea>
           </div>
           <button type="submit" className="cta-btn" disabled={sending}>{sending ? "Gönderiliyor..." : "Gönder"}</button>
-          {success === true && <div className="form-success">Form başarıyla gönderildi!</div>}
+          {success && <div className="form-success">{success}</div>}
+          {error && <div className="form-error">{error}</div>}
         </form>
       </section>
     </div>
