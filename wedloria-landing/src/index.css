@@ -1,0 +1,265 @@
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', 'Playfair Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background: #f8ece6;
+  color: #b88a7a;
+}
+
+.landing-root {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 16px 0 16px;
+}
+
+.wedloria-logo {
+  width: 100px;
+  margin-bottom: 8px;
+  display: block;
+}
+.wedloria-logo.left {
+  margin-left: 0;
+  margin-right: auto;
+}
+.hero-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+.hero {
+  text-align: center;
+  padding: 32px 0 24px 0;
+}
+.hero h1 {
+  font-size: 3rem;
+  color: #b88a7a;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+.hero h2 {
+  font-size: 1.5rem;
+  color: #b88a7a;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+.hero-desc {
+  font-size: 1.1rem;
+  color: #b88a7a;
+  margin-bottom: 2rem;
+}
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #b88a7a 60%, #c9a14a 100%);
+  color: #fff;
+  padding: 0.9em 2.2em;
+  border-radius: 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(185, 138, 122, 0.08);
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 8px;
+  border: none;
+}
+.cta-btn:hover {
+  background: linear-gradient(90deg, #c9a14a 60%, #b88a7a 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.features {
+  margin: 48px 0 32px 0;
+}
+.features h3 {
+  text-align: center;
+  color: #b88a7a;
+  margin-bottom: 24px;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.feature-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(185, 138, 122, 0.07);
+  padding: 24px 18px;
+  width: 240px;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1.5px solid #f3e3d7;
+  cursor: pointer;
+}
+.feature-card:hover {
+  box-shadow: 0 8px 32px rgba(201, 161, 74, 0.18);
+  transform: translateY(-6px) scale(1.05);
+  border: 1.5px solid #c9a14a;
+}
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+.feature-card h4 {
+  margin: 0.5rem 0 0.3rem 0;
+  color: #b88a7a;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+.feature-card p {
+  color: #b88a7a;
+  font-size: 1rem;
+}
+
+.why-wedloria {
+  margin: 48px 0 32px 0;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 16px rgba(185, 138, 122, 0.07);
+  border: 1.5px solid #f3e3d7;
+}
+.why-wedloria h3 {
+  color: #b88a7a;
+  margin-bottom: 18px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+.why-wedloria ul {
+  list-style: disc inside;
+  color: #b88a7a;
+  font-size: 1.08rem;
+  padding-left: 0;
+  text-align: left;
+}
+.why-wedloria li {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.technology {
+  margin: 48px 0 32px 0;
+  background: #f3e3d7;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 16px rgba(185, 138, 122, 0.04);
+  border: 1.5px solid #f8ece6;
+}
+.technology h3 {
+  color: #b88a7a;
+  margin-bottom: 18px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+.technology p {
+  color: #b88a7a;
+  font-size: 1.08rem;
+  text-align: center;
+}
+
+.footer-cta {
+  text-align: center;
+  margin: 64px 0 32px 0;
+}
+.footer-cta h2 {
+  color: #b88a7a;
+  margin-bottom: 18px;
+  font-size: 2rem;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+
+.contact-form-section {
+  margin: 64px 0 32px 0;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(185, 138, 122, 0.07);
+  border: 1.5px solid #f3e3d7;
+  padding: 40px 24px 32px 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-form-section h3 {
+  color: #b88a7a;
+  text-align: center;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+.contact-form-desc {
+  color: #b88a7a;
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.form-row {
+  display: flex;
+  gap: 18px;
+}
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.contact-form label {
+  color: #b88a7a;
+  font-size: 1rem;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 14px;
+  border: 1.5px solid #f3e3d7;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f8ece6;
+  color: #b88a7a;
+  transition: border 0.2s;
+  resize: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1.5px solid #c9a14a;
+  outline: none;
+}
+.contact-form button.cta-btn {
+  margin-top: 10px;
+  width: 180px;
+  align-self: center;
+}
+
+@media (max-width: 700px) {
+  .features-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-card {
+    width: 90%;
+    max-width: 340px;
+  }
+  .landing-root {
+    padding: 16px 2vw 0 2vw;
+  }
+  .why-wedloria, .technology {
+    padding: 18px 6px;
+  }
+  .contact-form-section {
+    padding: 18px 6px 18px 6px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
